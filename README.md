@@ -15,3 +15,5 @@ For example, the accuracy can be updated like this:
 userInfo.accuracy = 0.8;
 updateCounts();
 ```
+
+I do not own any of the images used here. Copyrights and/or trademarks of any images used belong to their respective owners.
