@@ -201,15 +201,16 @@ const onButtonClick = (event) => {
 
 const onTrophyClick = (event) => {
   if (event) {
-    let trophy = trophies.find(
+    const trophy = trophies.find(
       (element) =>
         element.number ===
         parseInt(event.currentTarget.getAttribute("number") || 0, 10)
     );
 
     if (trophy) {
+      const trophyName = trophy.name;
       trophyModal.setContent(`<div class="modal-header">
-  <h5 class="modal-title" id="trophyModalLabel">${trophy.name}</h5>
+  <h5 class="modal-title" id="trophyModalLabel">${trophyName}</h5>
   <button
     type="button"
     class="close"
@@ -221,7 +222,7 @@ const onTrophyClick = (event) => {
 </div>
 <div class="modal-body">
 <figure class="figure trophy-modal">
-  <img class="figure-img" src="${trophy.image}" />
+  <img class="figure-img" src="${trophy.image}" alt="${trophyName} Trophy" />
   <figcaption>${trophy.description}</figcaption>
 </figure>
 </div>`);
@@ -265,7 +266,7 @@ window.onload = () => {
         let trophyName = document.createElement("figcaption");
 
         trophyImage.setAttribute("src", trophy.image);
-        trophyImage.setAttribute("alt", "");
+        trophyImage.setAttribute("alt", `${trophy.name} Trophy`);
         trophyImage.classList.add("figure-img");
 
         trophyName.innerHTML = trophy.name;
